@@ -10,7 +10,7 @@ const Home = () => {
         <Container>
           <div className="flex flex-col items-center justify-center">
             <span className="pointer-events-none bg-linear-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl leading-none font-semibold whitespace-pre-wrap text-transparent dark:from-white dark:to-slate-900/10">
-              <h1>Davis Do</h1>
+              <h1>Draco</h1>
             </span>
           </div>
         </Container>
