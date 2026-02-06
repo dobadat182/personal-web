@@ -135,10 +135,24 @@
   body {
     @apply bg-background text-foreground font-sans;
     min-height: 100vh;
+    font-size: 1rem;
     line-height: 1.6;
+    letter-spacing: -0.01em;
   }
 
-  /* Optional: make font-satoshi available as utility */
+  /* Typography scale – đồng bộ font, dễ đọc */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-semibold tracking-tight text-foreground;
+  }
+
+  h1 { font-size: clamp(2.5rem, 8vw, 5rem); line-height: 1.1; letter-spacing: -0.02em; }
+  h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); line-height: 1.25; }
+  h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); line-height: 1.3; }
+  p {
+    @apply font-sans text-foreground;
+    line-height: 1.65;
+  }
+
   .font-satoshi {
     font-family: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif;
   }
