@@ -24,7 +24,7 @@ const BentoGrid = () => {
           </h2>
         </div>
 
-        <div className="grid auto-rows-[140px] grid-cols-2 gap-4 rounded-[2.5rem] bg-slate-50 p-4 text-base shadow-sm sm:grid sm:auto-rows-[minmax(200px,auto)] sm:grid-cols-2 md:auto-rows-[minmax(220px,auto)] md:p-6 lg:grid-cols-4 dark:bg-slate-900/30">
+        <div className="grid grid-cols-2 gap-4 rounded-[2.5rem] bg-slate-50 p-4 text-base shadow-sm sm:grid sm:auto-rows-[minmax(200px,auto)] sm:grid-cols-2 md:auto-rows-[minmax(220px,auto)] md:p-6 lg:grid-cols-4 dark:bg-slate-900/30">
           {/* Next.js card */}
           <div className="flex items-center justify-center rounded-3xl border border-slate-200 bg-white p-4 font-sans lg:col-span-1 dark:border-slate-700 dark:bg-slate-800/50">
             <div className="flex items-center justify-center">
@@ -181,7 +181,7 @@ const BentoGrid = () => {
           </div>
 
           {/* Globe card */}
-          <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-100/80 bg-[radial-gradient(circle_at_50%_200%,rgba(0,0,0,0.2),rgba(255,255,255,0))] lg:col-span-1 dark:border-slate-700 dark:bg-slate-800/50">
+          <div className="relative min-h-[140px] overflow-hidden rounded-3xl border border-slate-200 bg-slate-100/80 bg-[radial-gradient(circle_at_50%_200%,rgba(0,0,0,0.2),rgba(255,255,255,0))] lg:col-span-1 lg:min-h-auto dark:border-slate-700 dark:bg-slate-800/50">
             <Globe />
           </div>
         </div>
