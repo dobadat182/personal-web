@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/layouts/Footer";
+import Header from "@/components/layouts/Header";
 
 const satoshi = localFont({
   src: "../fonts/Satoshi-Variable.ttf",
@@ -31,7 +32,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${satoshi.variable} antialiased`}>
-        {children}
+        <Header />
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
