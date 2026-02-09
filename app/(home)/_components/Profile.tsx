@@ -17,15 +17,15 @@ const BentoGrid = () => {
   return (
     <Section>
       <Container>
-        <div className="text-center">
-          <h2 className="font-semibold">
+        <div className="mb-6 text-center">
+          <h2>
             Passionate developer crafting performant, user-friendly web
             experiences with modern Typescript UI/UX and scalable architecture.
           </h2>
         </div>
 
-        <div className="grid auto-rows-[150px] gap-4 rounded-[2.5rem] bg-slate-50 p-4 text-base shadow-[0_30px_60px_rgba(15,23,42,0.10)] md:auto-rows-[190px] md:p-6 lg:grid-cols-4 dark:bg-slate-900/30">
-          {/* 99% badge */}
+        <div className="grid auto-rows-[140px] grid-cols-2 gap-4 rounded-[2.5rem] bg-slate-50 p-4 text-base shadow-sm sm:grid sm:auto-rows-[minmax(200px,auto)] sm:grid-cols-2 md:auto-rows-[minmax(220px,auto)] md:p-6 lg:grid-cols-4 dark:bg-slate-900/30">
+          {/* Next.js card */}
           <div className="flex items-center justify-center rounded-3xl border border-slate-200 bg-white p-4 font-sans lg:col-span-1 dark:border-slate-700 dark:bg-slate-800/50">
             <div className="flex items-center justify-center">
               <svg viewBox="0 0 180 180" className="size-10">
@@ -90,11 +90,11 @@ const BentoGrid = () => {
 
           {/* Emoji card */}
           <div className="flex items-center justify-center rounded-3xl border border-slate-200 bg-white text-4xl lg:col-span-1 dark:border-slate-700 dark:bg-slate-800/50">
-            <p className="text-4xl">🚀</p>
+            <p className="text-3xl sm:text-4xl">🚀</p>
           </div>
 
           {/* Music card */}
-          <div className="relative flex overflow-hidden rounded-3xl border border-slate-200 bg-white pb-12 lg:col-span-2 lg:row-span-2 dark:border-slate-700 dark:bg-slate-800/50">
+          <div className="relative col-span-1 hidden overflow-hidden rounded-3xl border border-slate-200 bg-white pb-12 lg:col-span-2 lg:row-span-2 lg:flex dark:border-slate-700 dark:bg-slate-800/50">
             <iframe
               allow="autoplay *; encrypted-media *;"
               className="h-full w-full"
@@ -115,8 +115,8 @@ const BentoGrid = () => {
           </div>
 
           {/* About */}
-          <div className="flex flex-col justify-center rounded-3xl border border-slate-200 bg-white p-4 lg:col-span-1 lg:row-span-2 dark:border-slate-700 dark:bg-slate-800/50">
-            <p className="text-foreground text-base">
+          <div className="col-span-2 flex flex-col justify-center rounded-3xl border border-slate-200 bg-white p-4 lg:col-span-1 lg:row-span-2 dark:border-slate-700 dark:bg-slate-800/50">
+            <p className="text-foreground text-sm sm:text-base">
               As a young and passionate developer, I am eager to learn and
               explore new knowledge and technologies to continuously expand my
               skill set. Challenge me, and I&apos;ll turn it into an opportunity
@@ -125,49 +125,59 @@ const BentoGrid = () => {
           </div>
 
           {/* Frontend Developer badge */}
-          <div className="flex items-center justify-center rounded-3xl border border-slate-200 bg-white text-center font-sans lg:col-span-1 dark:border-slate-700 dark:bg-slate-800/50">
-            <p className="text-foreground text-left text-xl font-semibold md:text-2xl">
+          <div className="order-last flex items-center justify-center rounded-3xl border border-slate-200 bg-white text-center font-sans lg:order-0 lg:col-span-1 dark:border-slate-700 dark:bg-slate-800/50">
+            <p className="text-foreground text-left text-lg font-semibold sm:text-xl md:text-2xl">
               Frontend <br />
               Developer
             </p>
           </div>
 
           {/* Tech stack */}
-          <div className="flex flex-col gap-4 rounded-3xl border border-slate-200 bg-white p-4 lg:col-span-2 dark:border-slate-700 dark:bg-slate-800/50">
-            <p className="text-foreground flex items-end gap-2 font-sans text-xl font-semibold md:text-2xl">
-              Building modern web experiences with
-              <IconCornerRightDown className="size-6 shrink-0" aria-hidden />
-            </p>
+          <div className="col-span-2 flex flex-col gap-4 rounded-3xl border border-slate-200 bg-white p-4 lg:col-span-2 dark:border-slate-700 dark:bg-slate-800/50">
+            <div className="flex h-full flex-col justify-center gap-4">
+              <p className="text-foreground flex items-end gap-2 font-sans text-lg font-semibold sm:text-xl md:text-2xl">
+                Building modern web experiences with
+                <IconCornerRightDown className="size-6 shrink-0" aria-hidden />
+              </p>
 
-            <Splide
-              options={{
-                type: "loop",
-                drag: "free",
-                gap: "16px",
-                arrows: false,
-                pagination: false,
-                perPage: 4,
-                autoScroll: {
-                  speed: 0.2,
-                  autoStart: true,
-                },
-              }}
-              extensions={{ AutoScroll }}
-            >
-              {[
-                <IconBrandNextjs stroke={1.5} className="h-6 w-6" />,
-                <IconBrandReact stroke={1.5} className="h-6 w-6" />,
-                <IconBrandWordpress stroke={1.5} className="h-6 w-6" />,
-                <IconBrandBootstrap stroke={1.5} className="h-6 w-6" />,
-              ].map((tech, index) => (
-                <SplideSlide
-                  key={index}
-                  className={`flex aspect-square w-full items-center justify-center rounded-lg border p-6 ${index % 2 === 0 ? "bg-muted/50" : "border-dashed border-slate-200 dark:border-slate-600"}`}
-                >
-                  {tech}
-                </SplideSlide>
-              ))}
-            </Splide>
+              <Splide
+                options={{
+                  type: "loop",
+                  drag: "free",
+                  gap: "16px",
+                  arrows: false,
+                  pagination: false,
+                  perPage: 4,
+                  autoScroll: {
+                    speed: 0.4,
+                    autoStart: true,
+                  },
+                  breakpoints: {
+                    768: {
+                      perPage: 3,
+                    },
+                    1024: {
+                      perPage: 4,
+                    },
+                  },
+                }}
+                extensions={{ AutoScroll }}
+              >
+                {[
+                  <IconBrandNextjs stroke={1} className="h-6 w-6" />,
+                  <IconBrandReact stroke={1} className="h-6 w-6" />,
+                  <IconBrandWordpress stroke={1} className="h-6 w-6" />,
+                  <IconBrandBootstrap stroke={1} className="h-6 w-6" />,
+                ].map((tech, index) => (
+                  <SplideSlide
+                    key={index}
+                    className={`flex w-full items-center justify-center rounded-lg border p-6 ${index % 2 === 0 ? "bg-muted/50" : "border-dashed border-slate-200 dark:border-slate-600"}`}
+                  >
+                    {tech}
+                  </SplideSlide>
+                ))}
+              </Splide>
+            </div>
           </div>
 
           {/* Globe card */}
