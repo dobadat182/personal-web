@@ -1,4 +1,4 @@
-import Home from "./(home)";
+import Home from "./(home)/page";
 import Header from "@/components/layouts/Header";
 
 export default function Page() {

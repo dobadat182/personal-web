@@ -1,7 +1,9 @@
-import BentoGrid from "./components/BentoGrid";
+import BentoGrid from "./_components/Profile";
 import Container from "@/components/layouts/Container";
 import Section from "@/components/layouts/Section";
-import Lorems from "./components/lorems";
+import Projects from "./_components/Projects";
+import Services from "./_components/Services";
+import Contact from "./_components/Contact";
 
 const Home = () => {
   return (
@@ -14,13 +16,10 @@ const Home = () => {
         </Container>
       </Section>
 
-      <Section>
-        <BentoGrid />
-      </Section>
-
-      <Section>
-        <Lorems />
-      </Section>
+      <BentoGrid />
+      <Services />
+      <Projects />
+      <Contact />
     </main>
   );
 };
