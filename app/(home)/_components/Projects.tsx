@@ -60,7 +60,7 @@ const Projects = () => {
   return (
     <Section>
       <Container className="space-y-10">
-        <div className="space-y-3 text-center">
+        <div className="space-y-4 text-center">
           <h2>Projects</h2>
           <p className="text-muted-foreground mx-auto max-w-xl text-sm sm:text-base md:text-lg">
             A selection of projects I&apos;ve worked on recently.

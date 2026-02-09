@@ -38,7 +38,7 @@ const Services = () => {
   return (
     <Section>
       <Container className="space-y-10">
-        <div className="space-y-3 text-center">
+        <div className="space-y-4 text-center">
           <h2>How I Work With Clients</h2>
           <p className="text-muted-foreground mx-auto max-w-2xl text-sm sm:text-base md:text-lg">
             From first idea to shipped product, here&apos;s the process I follow

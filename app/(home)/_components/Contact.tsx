@@ -8,9 +8,18 @@ import {
   FieldContent,
   FieldDescription,
   FieldGroup,
+  FieldLabel,
   FieldSet,
   FieldTitle,
 } from "@/components/ui/field";
+import {
+  Select,
+  SelectGroup,
+  SelectContent,
+  SelectTrigger,
+  SelectValue,
+  SelectItem,
+} from "@/components/ui/select";
 
 const Contact = () => {
   return (
@@ -28,53 +37,54 @@ const Contact = () => {
         </div>
 
         <div className="bg-card rounded-2xl border border-slate-200 p-5 shadow-[0_18px_40px_rgba(15,23,42,0.08)] dark:border-slate-700 dark:bg-slate-900/40">
-          <form className="space-y-6">
+          <form className="space-y-4">
             <FieldSet>
               <FieldGroup>
-                <Field orientation="responsive">
-                  <FieldTitle>Your name</FieldTitle>
-                  <FieldContent>
-                    <Input name="name" placeholder="John Doe" />
-                  </FieldContent>
-                </Field>
+                <div className="grid grid-cols-2 gap-4">
+                  <Field>
+                    <FieldLabel htmlFor="username">Your Name</FieldLabel>
+                    <Input id="username" type="text" placeholder="John Doe" />
+                  </Field>
 
-                <Field orientation="responsive">
-                  <FieldTitle>Email</FieldTitle>
-                  <FieldContent>
+                  <Field>
+                    <FieldLabel htmlFor="email">Email</FieldLabel>
                     <Input
-                      name="email"
+                      id="email"
                       type="email"
                       placeholder="you@example.com"
                     />
-                  </FieldContent>
+                  </Field>
+                </div>
+
+                <Field>
+                  <FieldLabel>Department</FieldLabel>
+                  <Select>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Choose department" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectItem value="engineering">Engineering</SelectItem>
+                        <SelectItem value="design">Design</SelectItem>
+                        <SelectItem value="marketing">Marketing</SelectItem>
+                        <SelectItem value="sales">Sales</SelectItem>
+                        <SelectItem value="support">
+                          Customer Support
+                        </SelectItem>
+                        <SelectItem value="hr">Human Resources</SelectItem>
+                        <SelectItem value="finance">Finance</SelectItem>
+                        <SelectItem value="operations">Operations</SelectItem>
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
                 </Field>
 
-                <Field orientation="responsive">
-                  <FieldTitle>Project type</FieldTitle>
-                  <FieldContent>
-                    <Input
-                      name="projectType"
-                      placeholder="Landing page, SaaS dashboard, portfolio..."
-                    />
-                    <FieldDescription>
-                      A short label that describes what you need.
-                    </FieldDescription>
-                  </FieldContent>
-                </Field>
-
-                <Field orientation="vertical">
-                  <FieldTitle>Project details</FieldTitle>
-                  <FieldContent>
-                    <Textarea
-                      name="message"
-                      rows={4}
-                      placeholder="Share a bit about the problem, your users, and any deadlines."
-                    />
-                    <FieldDescription>
-                      You don&apos;t need a big brief—just enough context to get
-                      started.
-                    </FieldDescription>
-                  </FieldContent>
+                <Field>
+                  <FieldLabel>Project details</FieldLabel>
+                  <Textarea
+                    rows={4}
+                    placeholder="Share a bit about the problem, your users, and any deadlines."
+                  />
                 </Field>
               </FieldGroup>
             </FieldSet>
