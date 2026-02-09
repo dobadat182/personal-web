@@ -141,15 +141,30 @@
   }
 
   /* Typography scale – đồng bộ font, dễ đọc */
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-semibold tracking-tight text-foreground;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-foreground font-sans font-semibold tracking-tight;
   }
 
-  h1 { font-size: clamp(2.5rem, 8vw, 5rem); line-height: 1.1; letter-spacing: -0.02em; }
-  h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); line-height: 1.25; }
-  h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); line-height: 1.3; }
+  h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    line-height: 1.25;
+  }
+  h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    line-height: 1.3;
+  }
   p {
-    @apply font-sans text-foreground;
+    @apply text-foreground font-sans;
     line-height: 1.65;
   }
 
@@ -157,7 +172,7 @@
     font-family: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif;
   }
   .maplibregl-popup-content {
-    @apply bg-transparent! shadow-none! p-0! rounded-none!;
+    @apply rounded-none! bg-transparent! p-0! shadow-none!;
   }
   .maplibregl-popup-tip {
     @apply hidden!;

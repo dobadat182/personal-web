@@ -8,9 +8,9 @@ import Contact from "./_components/Contact";
 const Home = () => {
   return (
     <main className="font-sans">
-      <Section className="flex flex-col items-center justify-center min-h-screen">
+      <Section className="flex min-h-screen flex-col items-center justify-center">
         <Container>
-          <h1 className="pointer-events-none bg-linear-to-b from-foreground to-foreground/70 bg-clip-text text-center font-semibold text-transparent">
+          <h1 className="from-foreground to-foreground/70 pointer-events-none bg-linear-to-b bg-clip-text text-center font-semibold text-transparent">
             Draco
           </h1>
         </Container>

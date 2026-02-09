@@ -15,19 +15,19 @@ import {
 const Contact = () => {
   return (
     <Section>
-      <Container className="grid gap-10 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-start">
+      <Container className="grid items-start gap-10 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
         <div className="space-y-4">
-          <p className="text-xs font-medium uppercase tracking-[0.28em] text-muted-foreground sm:text-[0.7rem]">
+          <p className="text-muted-foreground text-xs font-medium tracking-[0.28em] uppercase sm:text-[0.7rem]">
             Contact
           </p>
           <h2>Let&apos;s build something together</h2>
-          <p className="max-w-xl text-sm text-muted-foreground sm:text-base md:text-lg">
+          <p className="text-muted-foreground max-w-xl text-sm sm:text-base md:text-lg">
             Tell me about your idea, timeline, and goals. I&apos;ll review your
             message and get back to you with next steps and a realistic plan.
           </p>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-card p-5 shadow-[0_18px_40px_rgba(15,23,42,0.08)] dark:border-slate-700 dark:bg-slate-900/40">
+        <div className="bg-card rounded-2xl border border-slate-200 p-5 shadow-[0_18px_40px_rgba(15,23,42,0.08)] dark:border-slate-700 dark:bg-slate-900/40">
           <form className="space-y-6">
             <FieldSet>
               <FieldGroup>
@@ -83,7 +83,7 @@ const Contact = () => {
               <Button type="submit" size="lg">
                 Send message
               </Button>
-              <p className="text-xs text-muted-foreground sm:text-sm">
+              <p className="text-muted-foreground text-xs sm:text-sm">
                 I usually respond within 1–2 business days.
               </p>
             </div>

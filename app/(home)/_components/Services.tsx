@@ -40,7 +40,7 @@ const Services = () => {
       <Container className="space-y-10">
         <div className="space-y-3 text-center">
           <h2>How I Work With Clients</h2>
-          <p className="mx-auto max-w-2xl text-sm text-muted-foreground sm:text-base md:text-lg">
+          <p className="text-muted-foreground mx-auto max-w-2xl text-sm sm:text-base md:text-lg">
             From first idea to shipped product, here&apos;s the process I follow
             to design and build modern web experiences.
           </p>
@@ -50,17 +50,17 @@ const Services = () => {
           {STEPS.map((step) => (
             <article
               key={step.subtitle}
-              className="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-card p-5 shadow-[0_18px_40px_rgba(15,23,42,0.08)] dark:border-slate-700 dark:bg-slate-900/40"
+              className="bg-card flex flex-col gap-3 rounded-2xl border border-slate-200 p-5 shadow-[0_18px_40px_rgba(15,23,42,0.08)] dark:border-slate-700 dark:bg-slate-900/40"
             >
               <div className="flex items-center gap-3">
                 <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 text-xs font-semibold text-slate-50 shadow-sm dark:bg-slate-100 dark:text-slate-900">
                   {step.title}
                 </span>
-                <h3 className="text-sm font-semibold text-foreground sm:text-base">
+                <h3 className="text-foreground text-sm font-semibold sm:text-base">
                   {step.subtitle}
                 </h3>
               </div>
-              <p className="text-xs text-muted-foreground sm:text-sm">
+              <p className="text-muted-foreground text-xs sm:text-sm">
                 {step.description}
               </p>
             </article>

@@ -23,6 +23,7 @@ const BentoGrid = () => {
             experiences with modern Typescript UI/UX and scalable architecture.
           </h2>
         </div>
+
         <div className="grid auto-rows-[150px] gap-4 rounded-[2.5rem] bg-slate-50 p-4 text-base shadow-[0_30px_60px_rgba(15,23,42,0.10)] md:auto-rows-[190px] md:p-6 lg:grid-cols-4 dark:bg-slate-900/30">
           {/* 99% badge */}
           <div className="flex items-center justify-center rounded-3xl border border-slate-200 bg-white p-4 font-sans lg:col-span-1 dark:border-slate-700 dark:bg-slate-800/50">
@@ -104,10 +105,10 @@ const BentoGrid = () => {
               title="Coding playlist"
             />
             <div
-              className="absolute bottom-0 left-0 right-0 flex items-end justify-center rounded-b-3xl bg-linear-to-t from-white via-white/80 to-transparent p-4 dark:from-slate-800/95 dark:via-slate-800/80"
+              className="absolute right-0 bottom-0 left-0 flex items-end justify-center rounded-b-3xl bg-linear-to-t from-white via-white/80 to-transparent p-4 dark:from-slate-800/95 dark:via-slate-800/80"
               aria-label="Music keeps me in flow while coding"
             >
-              <p className="font-sans text-sm text-muted-foreground">
+              <p className="text-muted-foreground font-sans text-sm">
                 Music keeps me in flow while coding.
               </p>
             </div>
@@ -115,7 +116,7 @@ const BentoGrid = () => {
 
           {/* About */}
           <div className="flex flex-col justify-center rounded-3xl border border-slate-200 bg-white p-4 lg:col-span-1 lg:row-span-2 dark:border-slate-700 dark:bg-slate-800/50">
-            <p className="text-base text-foreground">
+            <p className="text-foreground text-base">
               As a young and passionate developer, I am eager to learn and
               explore new knowledge and technologies to continuously expand my
               skill set. Challenge me, and I&apos;ll turn it into an opportunity
@@ -125,7 +126,7 @@ const BentoGrid = () => {
 
           {/* Frontend Developer badge */}
           <div className="flex items-center justify-center rounded-3xl border border-slate-200 bg-white text-center font-sans lg:col-span-1 dark:border-slate-700 dark:bg-slate-800/50">
-            <p className="text-left text-xl font-semibold text-foreground md:text-2xl">
+            <p className="text-foreground text-left text-xl font-semibold md:text-2xl">
               Frontend <br />
               Developer
             </p>
@@ -133,7 +134,7 @@ const BentoGrid = () => {
 
           {/* Tech stack */}
           <div className="flex flex-col gap-4 rounded-3xl border border-slate-200 bg-white p-4 lg:col-span-2 dark:border-slate-700 dark:bg-slate-800/50">
-            <p className="flex items-end gap-2 font-sans text-xl font-semibold text-foreground md:text-2xl">
+            <p className="text-foreground flex items-end gap-2 font-sans text-xl font-semibold md:text-2xl">
               Building modern web experiences with
               <IconCornerRightDown className="size-6 shrink-0" aria-hidden />
             </p>
@@ -154,14 +155,14 @@ const BentoGrid = () => {
               extensions={{ AutoScroll }}
             >
               {[
-                <IconBrandNextjs stroke={1.5} className="w-6 h-6" />,
-                <IconBrandReact stroke={1.5} className="w-6 h-6" />,
-                <IconBrandWordpress stroke={1.5} className="w-6 h-6" />,
-                <IconBrandBootstrap stroke={1.5} className="w-6 h-6" />,
+                <IconBrandNextjs stroke={1.5} className="h-6 w-6" />,
+                <IconBrandReact stroke={1.5} className="h-6 w-6" />,
+                <IconBrandWordpress stroke={1.5} className="h-6 w-6" />,
+                <IconBrandBootstrap stroke={1.5} className="h-6 w-6" />,
               ].map((tech, index) => (
                 <SplideSlide
                   key={index}
-                  className={`aspect-square flex w-full items-center justify-center rounded-lg border p-6 ${index % 2 === 0 ? "bg-muted/50" : "border-dashed border-slate-200 dark:border-slate-600"}`}
+                  className={`flex aspect-square w-full items-center justify-center rounded-lg border p-6 ${index % 2 === 0 ? "bg-muted/50" : "border-dashed border-slate-200 dark:border-slate-600"}`}
                 >
                   {tech}
                 </SplideSlide>

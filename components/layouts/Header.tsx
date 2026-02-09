@@ -97,7 +97,7 @@ export default function Header() {
     <Dock
       direction="bottom"
       disableMagnification
-      className="fixed bottom-4 left-0 right-0"
+      className="fixed right-0 bottom-4 left-0"
     >
       {DATA.navbar.map((item) => (
         <DockIcon key={item.label}>
