@@ -9,6 +9,12 @@ const satoshi = localFont({
   weight: "100 900", // Variable font supports weight range
 });
 
+const cabinet = localFont({
+  src: "../fonts/CabinetGrotesk-Variable.ttf",
+  variable: "--font-cabinet",
+  weight: "300 900",
+});
+
 export const metadata: Metadata = {
   title: "Draco Do — Frontend Developer",
   description:
@@ -30,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${satoshi.variable} antialiased`}>
+      <body className={`${satoshi.variable} ${cabinet.variable} antialiased`}>
         {children}
         <Footer />
       </body>
