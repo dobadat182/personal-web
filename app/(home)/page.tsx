@@ -1,26 +1,18 @@
 import BentoGrid from "./_components/Profile";
-import Container from "@/components/layouts/Container";
-import Section from "@/components/layouts/Section";
 import Projects from "./_components/Projects";
 import Services from "./_components/Services";
 import Contact from "./_components/Contact";
+import Hero from "./_components/Hero";
 
 const Home = () => {
   return (
-    <main className="font-sans">
-      <Section className="flex min-h-screen flex-col items-center justify-center">
-        <Container>
-          <h1 className="pointer-events-none bg-linear-to-b from-foreground to-foreground/70 bg-clip-text text-center text-balance text-transparent">
-            Draco
-          </h1>
-        </Container>
-      </Section>
-
+    <>
+      <Hero />
       <BentoGrid />
       <Services />
       <Projects />
       <Contact />
-    </main>
+    </>
   );
 };
 
