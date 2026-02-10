@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
-  ({ className, ...props }, ref) => {
+  ({ className, children, ...props }, ref) => {
     return (
       <div
         ref={ref}
@@ -13,7 +13,9 @@ const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
           className,
         )}
         {...props}
-      />
+      >
+        {children}
+      </div>
     );
   },
 );

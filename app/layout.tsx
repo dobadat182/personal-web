@@ -7,13 +7,13 @@ import Header from "@/components/layouts/Header";
 const satoshi = localFont({
   src: "../fonts/Satoshi-Variable.ttf",
   variable: "--font-satoshi",
-  weight: "100 900", // Variable font supports weight range
+  weight: "100 900",
 });
 
 const cabinet = localFont({
   src: "../fonts/CabinetGrotesk-Variable.ttf",
   variable: "--font-cabinet",
-  weight: "300 900",
+  weight: "100 900",
 });
 
 export const metadata: Metadata = {
@@ -38,6 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${satoshi.variable} ${cabinet.variable} antialiased`}>
+        <Header />
         {children}
         <Footer />
       </body>
