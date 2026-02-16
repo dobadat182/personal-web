@@ -3,13 +3,11 @@ import Section from "@/components/layouts/Section";
 import { Button } from "@/components/ui/button";
 import { IconExternalLink } from "@tabler/icons-react";
 import Link from "next/link";
+import StackCardScroll, {
+  type FeaturedProject,
+} from "./StackCardScroll";
 
-type Project = {
-  name: string;
-  description: string;
-  tags: string[];
-  href?: string;
-};
+type Project = FeaturedProject & { image?: string };
 
 const PROJECTS: Project[] = [
   {
@@ -65,6 +63,12 @@ const Projects = () => {
           <p className="text-muted-foreground mx-auto max-w-xl text-sm sm:text-base md:text-lg">
             A selection of projects I&apos;ve worked on recently.
           </p>
+        </div>
+
+        {/* Featured projects – scrollable stack cards */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-semibold">Featured</h3>
+          <StackCardScroll projects={PROJECTS.slice(0, 5)} />
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
