@@ -12,13 +12,14 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import Section from "@/components/layouts/Section";
 import Container from "@/components/layouts/Container";
+import Image from "next/image";
 
 const BentoGrid = () => {
   return (
     <Section>
       <Container>
-        <div className="mb-6 text-center">
-          <h2>
+        <div className="mb-8 text-center md:mb-10">
+          <h2 className="text-foreground text-xl font-semibold tracking-tight text-balance sm:text-2xl md:text-3xl lg:text-4xl">
             Passionate developer crafting performant, user-friendly web
             experiences with modern Typescript UI/UX and scalable architecture.
           </h2>
@@ -28,7 +29,7 @@ const BentoGrid = () => {
           {/* Next.js card */}
           <div className="flex items-center justify-center rounded-3xl border border-slate-200 bg-white p-4 font-sans lg:col-span-1 dark:border-slate-700 dark:bg-slate-800/50">
             <div className="flex items-center justify-center">
-              <svg viewBox="0 0 180 180" className="size-10">
+              <svg viewBox="0 0 180 180" className="size-20">
                 <mask
                   height="180"
                   id="nextjs_icon_dark__:r8:mask0_408_134"
@@ -90,7 +91,15 @@ const BentoGrid = () => {
 
           {/* Emoji card */}
           <div className="flex items-center justify-center rounded-3xl border border-slate-200 bg-white text-4xl lg:col-span-1 dark:border-slate-700 dark:bg-slate-800/50">
-            <p className="text-3xl sm:text-4xl">🚀</p>
+            <p className="text-3xl sm:text-4xl">
+              <Image
+                unoptimized
+                src="/face-in-clouds.png"
+                alt="Emoji"
+                width={100}
+                height={100}
+              />
+            </p>
           </div>
 
           {/* Music card */}
@@ -108,7 +117,7 @@ const BentoGrid = () => {
               className="absolute right-0 bottom-0 left-0 flex items-end justify-center rounded-b-3xl bg-linear-to-t from-white via-white/80 to-transparent p-4 dark:from-slate-800/95 dark:via-slate-800/80"
               aria-label="Music keeps me in flow while coding"
             >
-              <p className="text-muted-foreground font-sans text-sm">
+              <p className="text-muted-foreground font-sans text-xs sm:text-sm">
                 Music keeps me in flow while coding.
               </p>
             </div>
@@ -116,7 +125,7 @@ const BentoGrid = () => {
 
           {/* About */}
           <div className="col-span-2 flex flex-col justify-center rounded-3xl border border-slate-200 bg-white p-4 lg:col-span-1 lg:row-span-2 dark:border-slate-700 dark:bg-slate-800/50">
-            <p className="text-foreground text-sm sm:text-base">
+            <p className="text-foreground text-sm leading-relaxed sm:text-base md:text-lg">
               As a young and passionate developer, I am eager to learn and
               explore new knowledge and technologies to continuously expand my
               skill set. Challenge me, and I&apos;ll turn it into an opportunity
@@ -126,7 +135,7 @@ const BentoGrid = () => {
 
           {/* Frontend Developer badge */}
           <div className="order-last flex items-center justify-center rounded-3xl border border-slate-200 bg-white text-center font-sans lg:order-0 lg:col-span-1 dark:border-slate-700 dark:bg-slate-800/50">
-            <p className="text-foreground text-left text-lg font-semibold sm:text-xl md:text-2xl">
+            <p className="text-foreground text-left text-base font-semibold sm:text-lg md:text-xl lg:text-2xl">
               Frontend <br />
               Developer
             </p>
@@ -135,7 +144,7 @@ const BentoGrid = () => {
           {/* Tech stack */}
           <div className="col-span-2 flex flex-col gap-4 rounded-3xl border border-slate-200 bg-white p-4 lg:col-span-2 dark:border-slate-700 dark:bg-slate-800/50">
             <div className="flex h-full flex-col justify-center gap-4">
-              <p className="text-foreground flex items-end gap-2 font-sans text-lg font-semibold sm:text-xl md:text-2xl">
+              <p className="text-foreground flex items-end gap-2 font-sans text-base font-semibold sm:text-lg md:text-xl lg:text-2xl">
                 Building modern web experiences with
                 <IconCornerRightDown className="size-6 shrink-0" aria-hidden />
               </p>

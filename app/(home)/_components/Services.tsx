@@ -1,71 +1,85 @@
+"use client";
+
 import Container from "@/components/layouts/Container";
 import Section from "@/components/layouts/Section";
-
-type ServiceStep = {
-  title: string;
-  subtitle: string;
-  description: string;
-};
-
-const STEPS: ServiceStep[] = [
-  {
-    title: "01",
-    subtitle: "Discovery & Goals",
-    description:
-      "We clarify your vision, target users, and success metrics so every design and technical decision is aligned with real business goals.",
-  },
-  {
-    title: "02",
-    subtitle: "UX / UI Design",
-    description:
-      "I translate ideas into user flows, wireframes, and polished interfaces that feel modern, fast, and easy to use on any device.",
-  },
-  {
-    title: "03",
-    subtitle: "Development",
-    description:
-      "Using React, Next.js, TypeScript, and Tailwind CSS, I build high‑quality, maintainable frontends that are ready to scale with your product.",
-  },
-  {
-    title: "04",
-    subtitle: "Launch & Iterate",
-    description:
-      "Once shipped, I help monitor performance, collect feedback, and refine the product so it keeps improving with every release.",
-  },
-];
+import { ServiceStep } from "@/lib/services";
+import { useEffect, useState } from "react";
 
 const Services = () => {
-  return (
-    <Section>
-      <Container className="space-y-10">
-        <div className="space-y-4 text-center">
-          <h2>How I Work With Clients</h2>
-          <p className="text-muted-foreground mx-auto max-w-2xl text-sm sm:text-base md:text-lg">
-            From first idea to shipped product, here&apos;s the process I follow
-            to design and build modern web experiences.
-          </p>
-        </div>
+  const [services, setServices] = useState<ServiceStep[]>([]);
+  const [status, setStatus] = useState<"idle" | "loading" | "error">("loading");
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {STEPS.map((step) => (
-            <article
-              key={step.subtitle}
-              className="bg-card flex flex-col gap-3 rounded-2xl border border-slate-200 p-5 shadow-[0_18px_40px_rgba(15,23,42,0.08)] dark:border-slate-700 dark:bg-slate-900/40"
-            >
-              <div className="flex items-center gap-3">
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 text-xs font-semibold text-slate-50 shadow-sm dark:bg-slate-100 dark:text-slate-900">
+  useEffect(() => {
+    const controller = new AbortController();
+    const fetchServices = async () => {
+      setStatus("loading");
+      try {
+        const response = await fetch("/api/services", {
+          signal: controller.signal,
+        });
+        if (!response.ok) throw new Error("Failed to fetch");
+        const data = await response.json();
+        setServices(data);
+        setStatus("idle");
+      } catch (err) {
+        if ((err as Error).name !== "AbortError") setStatus("error");
+      }
+    };
+    fetchServices();
+    return () => controller.abort();
+  }, []);
+
+  if (status === "error") {
+    return (
+      <Section>
+        <Container>
+          <p className="text-muted-foreground text-center text-sm">
+            Unable to load services. Please try again later.
+          </p>
+        </Container>
+      </Section>
+    );
+  }
+
+  return (
+    <Section className="bg-slate-50 py-16 md:py-24">
+      <Container>
+        <header className="mb-10 text-center md:mb-14">
+          <h2 className="text-foreground text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl">
+            How I work with clients
+          </h2>
+          <p className="text-muted-foreground mx-auto mt-3 max-w-xl text-sm sm:text-base md:text-lg">
+            From idea to shipped product.
+          </p>
+        </header>
+
+        {status === "loading" ? (
+          <p className="text-muted-foreground text-center text-sm">Loading…</p>
+        ) : (
+          <div className="grid gap-4 md:grid-cols-2">
+            {services.map((step) => (
+              <article
+                key={step.subtitle}
+                className="bg-card flex flex-col items-center gap-6 rounded-2xl border border-slate-200 p-5 md:flex-row"
+              >
+                <span
+                  className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-black text-2xl font-medium text-white tabular-nums md:h-16 md:w-16 md:text-3xl"
+                  aria-hidden
+                >
                   {step.title}
                 </span>
-                <h3 className="text-foreground text-sm font-semibold sm:text-base">
-                  {step.subtitle}
-                </h3>
-              </div>
-              <p className="text-muted-foreground text-xs sm:text-sm">
-                {step.description}
-              </p>
-            </article>
-          ))}
-        </div>
+                <div className="min-w-0 flex-1 pt-0.5">
+                  <h3 className="text-foreground text-base font-semibold sm:text-lg md:text-xl">
+                    {step.subtitle}
+                  </h3>
+                  <p className="text-muted-foreground mt-1.5 text-sm leading-relaxed sm:text-base">
+                    {step.description}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
       </Container>
     </Section>
   );

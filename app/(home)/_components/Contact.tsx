@@ -25,12 +25,14 @@ const Contact = () => {
   return (
     <Section>
       <Container className="grid items-start gap-10 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
-        <div className="space-y-4">
-          <p className="text-muted-foreground text-xs font-medium tracking-[0.28em] uppercase sm:text-[0.7rem]">
+        <div className="space-y-3 md:space-y-4">
+          <p className="text-muted-foreground text-xs font-medium uppercase tracking-widest sm:text-sm">
             Contact
           </p>
-          <h2>Let&apos;s build something together</h2>
-          <p className="text-muted-foreground max-w-xl text-sm sm:text-base md:text-lg">
+          <h2 className="text-foreground text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl">
+            Let&apos;s build something together
+          </h2>
+          <p className="text-muted-foreground max-w-xl text-sm leading-relaxed sm:text-base md:text-lg">
             Tell me about your idea, timeline, and goals. I&apos;ll review your
             message and get back to you with next steps and a realistic plan.
           </p>
@@ -93,7 +95,7 @@ const Contact = () => {
               <Button type="submit" size="lg">
                 Send message
               </Button>
-              <p className="text-muted-foreground text-xs sm:text-sm">
+              <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
                 I usually respond within 1–2 business days.
               </p>
             </div>
