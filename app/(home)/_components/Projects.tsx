@@ -60,7 +60,14 @@ const Projects = () => {
                 </div>
                 {project.href && (
                   <Button variant="link" asChild size="icon">
-                    <Link href={project.href}>
+                    <Link
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open in new tab"
+                      title="Open in new tab"
+                      className="hover:text-primary"
+                    >
                       <IconExternalLink className="h-4 w-4" aria-hidden />
                     </Link>
                   </Button>

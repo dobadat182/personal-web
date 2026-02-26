@@ -17,16 +17,16 @@ const cabinet = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Draco Do — Frontend Developer",
+  title: "Davis Do — Frontend Developer",
   description:
-    "Draco is Frontend Developer with 3 years of experience in web development. I am passionate about creating beautiful and functional websites. I am a quick learner and I am always looking to improve my skills.",
+    "Davis Do is Frontend Developer with 3 years of experience in web development. I am passionate about creating beautiful and functional websites. I am a quick learner and I am always looking to improve my skills.",
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
-    title: "Draco",
+    title: "Davis Do",
     description:
-      "Draco is a modern and responsive website template built with Next.js and Tailwind CSS.",
+      "Davis Do is a modern and responsive website template built with Next.js and Tailwind CSS.",
   },
 };
 
@@ -38,7 +38,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${satoshi.variable} ${cabinet.variable} antialiased`}>
-        <Header />
         {children}
         <Footer />
       </body>

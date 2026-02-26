@@ -19,7 +19,7 @@ const BentoGrid = () => {
     <Section>
       <Container>
         <div className="mb-8 text-center md:mb-10">
-          <h2 className="text-foreground text-xl font-semibold tracking-tight text-balance sm:text-2xl md:text-3xl lg:text-4xl">
+          <h2 className="text-foreground text-xl font-semibold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl">
             Passionate developer crafting performant, user-friendly web
             experiences with modern Typescript UI/UX and scalable architecture.
           </h2>

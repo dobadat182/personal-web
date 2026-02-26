@@ -9,7 +9,7 @@ const Footer = () => {
       <Container className="text-muted-foreground flex flex-col gap-4 text-xs sm:flex-row sm:items-center sm:justify-between sm:text-sm">
         <div className="space-y-1">
           <p className="text-foreground font-medium">
-            Draco Do — Frontend Developer
+            Davis Do — Frontend Developer
           </p>
           <p className="text-muted-foreground max-w-md text-xs sm:text-sm">
             Crafting modern, performant interfaces with React, Next.js,
@@ -19,7 +19,7 @@ const Footer = () => {
 
         <div className="flex flex-wrap items-center gap-3 sm:justify-end">
           <p className="text-muted-foreground text-xs sm:text-sm">
-            © {year} Draco Do. All rights reserved.
+            © {year} Davis Do. All rights reserved.
           </p>
         </div>
       </Container>
