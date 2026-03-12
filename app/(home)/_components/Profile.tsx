@@ -1,0 +1,202 @@
+"use client";
+
+import { Globe } from "@/components/ui/globe";
+import {
+  IconBrandBootstrap,
+  IconBrandWordpress,
+  IconBrandNextjs,
+  IconBrandReact,
+  IconCornerRightDown,
+} from "@tabler/icons-react";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+import Section from "@/components/layouts/Section";
+import Container from "@/components/layouts/Container";
+import Image from "next/image";
+
+const BentoGrid = () => {
+  return (
+    <Section>
+      <Container>
+        <div className="mb-8 text-center md:mb-10">
+          <h2 className="text-foreground text-xl font-semibold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl">
+            Passionate developer crafting performant, user-friendly web
+            experiences with modern Typescript UI/UX and scalable architecture.
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4 rounded-[2.5rem] bg-slate-50 p-4 text-base shadow-sm sm:grid sm:auto-rows-[minmax(200px,auto)] sm:grid-cols-2 md:auto-rows-[minmax(220px,auto)] md:p-6 lg:grid-cols-4 dark:bg-slate-900/30">
+          {/* Next.js card */}
+          <div className="flex items-center justify-center rounded-3xl border border-slate-200 bg-white p-4 font-sans lg:col-span-1 dark:border-slate-700 dark:bg-slate-800/50">
+            <div className="flex items-center justify-center">
+              <svg viewBox="0 0 180 180" className="size-20">
+                <mask
+                  height="180"
+                  id="nextjs_icon_dark__:r8:mask0_408_134"
+                  maskUnits="userSpaceOnUse"
+                  width="180"
+                  x="0"
+                  y="0"
+                  style={{ maskType: "alpha" }}
+                >
+                  <circle cx="90" cy="90" fill="black" r="90" />
+                </mask>
+                <g mask="url(#nextjs_icon_dark__:r8:mask0_408_134)">
+                  <circle
+                    cx="90"
+                    cy="90"
+                    data-circle="true"
+                    fill="black"
+                    r="90"
+                  />
+                  <path
+                    d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z"
+                    fill="url(#nextjs_icon_dark__:r8:paint0_linear_408_134)"
+                  />
+                  <rect
+                    fill="url(#nextjs_icon_dark__:r8:paint1_linear_408_134)"
+                    height="72"
+                    width="12"
+                    x="115"
+                    y="54"
+                  />
+                </g>
+                <defs>
+                  <linearGradient
+                    gradientUnits="userSpaceOnUse"
+                    id="nextjs_icon_dark__:r8:paint0_linear_408_134"
+                    x1="109"
+                    x2="144.5"
+                    y1="116.5"
+                    y2="160.5"
+                  >
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="white" stopOpacity="0" />
+                  </linearGradient>
+                  <linearGradient
+                    gradientUnits="userSpaceOnUse"
+                    id="nextjs_icon_dark__:r8:paint1_linear_408_134"
+                    x1="121"
+                    x2="120.799"
+                    y1="54"
+                    y2="106.875"
+                  >
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="white" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+
+          {/* Emoji card */}
+          <div className="flex items-center justify-center rounded-3xl border border-slate-200 bg-white text-4xl lg:col-span-1 dark:border-slate-700 dark:bg-slate-800/50">
+            <p className="text-3xl sm:text-4xl">
+              <Image
+                unoptimized
+                src="/face-in-clouds.png"
+                alt="Emoji"
+                width={100}
+                height={100}
+              />
+            </p>
+          </div>
+
+          {/* Music card */}
+          <div className="relative col-span-1 hidden overflow-hidden rounded-3xl border border-slate-200 bg-white pb-12 lg:col-span-2 lg:row-span-2 lg:flex dark:border-slate-700 dark:bg-slate-800/50">
+            <iframe
+              allow="autoplay *; encrypted-media *;"
+              className="h-full w-full"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+              src="https://embed.music.apple.com/vn/playlist/coding/pl.30c9e2cf347442a2973a055ff877c0e2"
+              title="Coding playlist"
+            />
+            <div
+              className="absolute right-0 bottom-0 left-0 flex items-end justify-center rounded-b-3xl bg-linear-to-t from-white via-white/80 to-transparent p-4 dark:from-slate-800/95 dark:via-slate-800/80"
+              aria-label="Music keeps me in flow while coding"
+            >
+              <p className="text-muted-foreground font-sans text-xs sm:text-sm">
+                Music keeps me in flow while coding.
+              </p>
+            </div>
+          </div>
+
+          {/* About */}
+          <div className="col-span-2 flex flex-col justify-center rounded-3xl border border-slate-200 bg-white p-4 lg:col-span-1 lg:row-span-2 dark:border-slate-700 dark:bg-slate-800/50">
+            <p className="text-foreground text-sm leading-relaxed sm:text-base md:text-lg">
+              As a young and passionate developer, I am eager to learn and
+              explore new knowledge and technologies to continuously expand my
+              skill set. Challenge me, and I&apos;ll turn it into an opportunity
+              to grow and deliver more.
+            </p>
+          </div>
+
+          {/* Frontend Developer badge */}
+          <div className="order-last flex items-center justify-center rounded-3xl border border-slate-200 bg-white text-center font-sans lg:order-0 lg:col-span-1 dark:border-slate-700 dark:bg-slate-800/50">
+            <p className="text-foreground text-left text-base font-semibold sm:text-lg md:text-xl lg:text-2xl">
+              Frontend <br />
+              Developer
+            </p>
+          </div>
+
+          {/* Tech stack */}
+          <div className="col-span-2 flex flex-col gap-4 rounded-3xl border border-slate-200 bg-white p-4 lg:col-span-2 dark:border-slate-700 dark:bg-slate-800/50">
+            <div className="flex h-full flex-col justify-center gap-4">
+              <p className="text-foreground flex items-end gap-2 font-sans text-base font-semibold sm:text-lg md:text-xl lg:text-2xl">
+                Building modern web experiences with
+                <IconCornerRightDown className="size-6 shrink-0" aria-hidden />
+              </p>
+
+              <Splide
+                options={{
+                  type: "loop",
+                  drag: "free",
+                  gap: "16px",
+                  arrows: false,
+                  pagination: false,
+                  perPage: 4,
+                  autoScroll: {
+                    speed: 0.4,
+                    autoStart: true,
+                  },
+                  breakpoints: {
+                    768: {
+                      perPage: 3,
+                    },
+                    1024: {
+                      perPage: 4,
+                    },
+                  },
+                }}
+                extensions={{ AutoScroll }}
+              >
+                {[
+                  <IconBrandNextjs stroke={1} className="h-6 w-6" />,
+                  <IconBrandReact stroke={1} className="h-6 w-6" />,
+                  <IconBrandWordpress stroke={1} className="h-6 w-6" />,
+                  <IconBrandBootstrap stroke={1} className="h-6 w-6" />,
+                ].map((tech, index) => (
+                  <SplideSlide
+                    key={index}
+                    className={`flex w-full items-center justify-center rounded-lg border p-6 ${index % 2 === 0 ? "bg-muted/50" : "border-dashed border-slate-200 dark:border-slate-600"}`}
+                  >
+                    {tech}
+                  </SplideSlide>
+                ))}
+              </Splide>
+            </div>
+          </div>
+
+          {/* Globe card */}
+          <div className="relative min-h-[140px] overflow-hidden rounded-3xl border border-slate-200 bg-slate-100/80 bg-[radial-gradient(circle_at_50%_200%,rgba(0,0,0,0.2),rgba(255,255,255,0))] lg:col-span-1 lg:min-h-auto dark:border-slate-700 dark:bg-slate-800/50">
+            <Globe />
+          </div>
+        </div>
+      </Container>
+    </Section>
+  );
+};
+
+export default BentoGrid;
